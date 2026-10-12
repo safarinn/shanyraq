@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shanyraq.kz — учебный портал продажи и аренды недвижимости Казахстана.">
+    <title>
+      Политика конфиденциальности — Shanyraq.kz
+    </title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer>
+    </script>
+  </head>
+  <body data-page="privacy">
+    <!-- Общее меню: JavaScript только меняет видимость входа, профиля и админки. -->
+    <header id="header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            ⌂
+          </span>
+          <span>
+            shanyraq
+            <small>
+              .kz
+            </small>
+          </span>
+        </a>
+        <button id="menu-button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">
+          ☰
+        </button>
+        <nav id="navigation" aria-label="Главная навигация">
+          <a href="index.html">
+            Главная
+          </a>
+          <a href="catalog.html">
+            Объявления
+          </a>
+          <a href="about.html">
+            О проекте
+          </a>
+          <a href="favorites.html">
+            Избранное
+          </a>
+          <a id="admin-link" href="admin.html" hidden>
+            Админ
+          </a>
+          <a id="profile-link" href="profile.html" hidden>
+            Профиль
+          </a>
+          <a id="login-link" class="btn secondary small" href="login.html">
+            Войти
+          </a>
+          <button id="logout-button" class="btn secondary small" hidden>
+            Выйти
+          </button>
+          <a id="publish-link" class="btn small" href="contact.html">
+            + Разместить
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container page">
+        <div class="breadcrumb">
+          <a href="index.html">
+            Главная
+          </a>
+          / Конфиденциальность
+        </div>
+        <div class="content-copy">
+          <span class="eyebrow">
+            Shanyraq.kz
+          </span>
+          <h1 class="page-title">
+            Конфиденциальность
+          </h1>
+          <p class="muted">
+            Как хранятся данные в учебном проекте
+          </p>
+          <div class="panel">
+            <p>
+              Имя, фамилия, email, телефон, избранное и заявки сохраняются в локальной базе SQLite на компьютере, где запущен сервер. Пароли сохраняются как хеши PBKDF2 с солью.
+            </p>
+            <p>
+              Cookie сессии используется для входа. Аналитика, рекламные трекеры и внешние шрифты не подключены. Администратор может видеть профили и заявки, но не исходные пароли.
+            </p>
+            <p>
+              Чтобы удалить данные учебного запуска, остановите сервер и удалите файл data/shanyraq.sqlite3. При новом запуске будут созданы демонстрационные данные. Используйте вымышленные данные для проверки.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Футер одинаков на всех страницах. -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <a class="brand" href="index.html">
+              shanyraq
+              <small>
+                .kz
+              </small>
+            </a>
+            <p class="muted">
+              Ваш следующий адрес начинается здесь.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">
+              О проекте
+            </a>
+            <a href="contact.html">
+              Контакты
+            </a>
+            <a href="privacy.html">
+              Конфиденциальность
+            </a>
+            <a href="terms.html">
+              Условия
+            </a>
+          </div>
+        </div>
+        <div class="footer-note">
+          <span>
+            © Shanyraq.kz · Учебный проект
+          </span>
+          <span>
+            Алматы · Астана · Шымкент · Демонстрационные объявления
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

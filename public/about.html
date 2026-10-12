@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shanyraq.kz — учебный портал продажи и аренды недвижимости Казахстана.">
+    <title>
+      О проекте — Shanyraq.kz
+    </title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer>
+    </script>
+  </head>
+  <body data-page="about">
+    <!-- Общее меню: JavaScript только меняет видимость входа, профиля и админки. -->
+    <header id="header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            ⌂
+          </span>
+          <span>
+            shanyraq
+            <small>
+              .kz
+            </small>
+          </span>
+        </a>
+        <button id="menu-button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">
+          ☰
+        </button>
+        <nav id="navigation" aria-label="Главная навигация">
+          <a href="index.html">
+            Главная
+          </a>
+          <a href="catalog.html">
+            Объявления
+          </a>
+          <a href="about.html" aria-current="page">
+            О проекте
+          </a>
+          <a href="favorites.html">
+            Избранное
+          </a>
+          <a id="admin-link" href="admin.html" hidden>
+            Админ
+          </a>
+          <a id="profile-link" href="profile.html" hidden>
+            Профиль
+          </a>
+          <a id="login-link" class="btn secondary small" href="login.html">
+            Войти
+          </a>
+          <button id="logout-button" class="btn secondary small" hidden>
+            Выйти
+          </button>
+          <a id="publish-link" class="btn small" href="contact.html">
+            + Разместить
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container page">
+        <div class="breadcrumb">
+          <a href="index.html">
+            Главная
+          </a>
+          / О Shanyraq.kz
+        </div>
+        <div class="content-copy">
+          <span class="eyebrow">
+            Shanyraq.kz
+          </span>
+          <h1 class="page-title">
+            О Shanyraq.kz
+          </h1>
+          <p class="muted">
+            Место, с которого начинается дом.
+          </p>
+          <div class="panel">
+            <p>
+              Shanyraq.kz — учебный многостраничный сервис для поиска недвижимости Казахстана. Название отсылает к шаныраку — символу дома и единства.
+            </p>
+            <h2>
+              Что можно сделать
+            </h2>
+            <ul>
+              <li>
+                Найти квартиру, дом или коммерческое пространство в Алматы, Астане и Шымкенте.
+              </li>
+              <li>
+                Сравнить варианты продажи и аренды по городу, типу и цене.
+              </li>
+              <li>
+                Сохранить объекты в избранное и записаться на просмотр.
+              </li>
+              <li>
+                Управлять личными данными и историей заявок.
+              </li>
+            </ul>
+            <p>
+              Администратор управляет каталогом, пользователями и статусами заявок. Все объекты и иллюстрации демонстрационные.
+            </p>
+            <a class="btn" href="catalog.html">
+              Посмотреть объявления ↗
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Футер одинаков на всех страницах. -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <a class="brand" href="index.html">
+              shanyraq
+              <small>
+                .kz
+              </small>
+            </a>
+            <p class="muted">
+              Ваш следующий адрес начинается здесь.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">
+              О проекте
+            </a>
+            <a href="contact.html">
+              Контакты
+            </a>
+            <a href="privacy.html">
+              Конфиденциальность
+            </a>
+            <a href="terms.html">
+              Условия
+            </a>
+          </div>
+        </div>
+        <div class="footer-note">
+          <span>
+            © Shanyraq.kz · Учебный проект
+          </span>
+          <span>
+            Алматы · Астана · Шымкент · Демонстрационные объявления
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

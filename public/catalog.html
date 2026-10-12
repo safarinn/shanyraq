@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shanyraq.kz — учебный портал продажи и аренды недвижимости Казахстана.">
+    <title>
+      Каталог недвижимости — Shanyraq.kz
+    </title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer>
+    </script>
+    <script src="js/catalog.js" defer>
+    </script>
+  </head>
+  <body data-page="catalog">
+    <!-- Общее меню: JavaScript только меняет видимость входа, профиля и админки. -->
+    <header id="header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            ⌂
+          </span>
+          <span>
+            shanyraq
+            <small>
+              .kz
+            </small>
+          </span>
+        </a>
+        <button id="menu-button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">
+          ☰
+        </button>
+        <nav id="navigation" aria-label="Главная навигация">
+          <a href="index.html">
+            Главная
+          </a>
+          <a href="catalog.html" aria-current="page">
+            Объявления
+          </a>
+          <a href="about.html">
+            О проекте
+          </a>
+          <a href="favorites.html">
+            Избранное
+          </a>
+          <a id="admin-link" href="admin.html" hidden>
+            Админ
+          </a>
+          <a id="profile-link" href="profile.html" hidden>
+            Профиль
+          </a>
+          <a id="login-link" class="btn secondary small" href="login.html">
+            Войти
+          </a>
+          <button id="logout-button" class="btn secondary small" hidden>
+            Выйти
+          </button>
+          <a id="publish-link" class="btn small" href="contact.html">
+            + Разместить
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <div class="container">
+        <section class="page" style="padding-bottom:55px">
+          <div class="breadcrumb">
+            <a href="index.html">
+              Главная
+            </a>
+            / Объявления
+          </div>
+          <span class="eyebrow">
+            Найдите своё пространство
+          </span>
+          <h1 class="page-title">
+            Продажа и аренда недвижимости
+          </h1>
+          <p class="muted">
+            Выберите город, тип недвижимости и комфортный бюджет.
+          </p>
+        </section>
+        <form id="search-form" class="search-panel">
+          <div class="deal-tabs" role="group" aria-label="Тип сделки">
+            <button type="button" data-deal="sale" class="" aria-pressed="false">
+              Купить
+            </button>
+            <button type="button" data-deal="rent" class="" aria-pressed="false">
+              Снять
+            </button>
+            <button type="button" data-deal="all" class="active" aria-pressed="true">
+              Все объявления
+            </button>
+          </div>
+          <div class="search-row">
+            <div>
+              <label for="city">
+                Город
+              </label>
+              <select id="city">
+                <option value="">
+                  Все города
+                </option>
+                <option>
+                  Алматы
+                </option>
+                <option>
+                  Астана
+                </option>
+                <option>
+                  Шымкент
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="type">
+                Недвижимость
+              </label>
+              <select id="type">
+                <option value="">
+                  Все типы
+                </option>
+                <option value="apartment">
+                  Квартира
+                </option>
+                <option value="house">
+                  Дом
+                </option>
+                <option value="commercial">
+                  Коммерческая
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="max-price">
+                Цена до, ₸
+              </label>
+              <input id="max-price" type="number" min="1" placeholder="Любая цена">
+            </div>
+            <div>
+              <label for="query">
+                Район, ЖК или адрес
+              </label>
+              <input id="query" type="search" placeholder="Например, Бостандыкский">
+            </div>
+            <button class="btn" type="submit">
+              Найти ↗
+            </button>
+          </div>
+        </form>
+        <section class="browse">
+          <div class="section-head">
+            <div>
+              <h2>
+                Каталог объявлений
+              </h2>
+              <p class="muted" id="result-count" aria-live="polite">
+              </p>
+            </div>
+            <div class="controls">
+              <label for="sort" class="muted">
+                Сортировка
+              </label>
+              <select id="sort">
+                <option value="new">
+                  Сначала новые
+                </option>
+                <option value="asc">
+                  Цена: по возрастанию
+                </option>
+                <option value="desc">
+                  Цена: по убыванию
+                </option>
+              </select>
+              <button class="btn secondary small" id="reset">
+                Сбросить
+              </button>
+            </div>
+          </div>
+          <!-- Здесь catalog.js показывает карточки из базы. -->
+          <div class="property-list" id="results">
+          </div>
+        </section>
+      </div>
+      <!-- Шаблон одной карточки. common.js копирует его для каждого объекта из базы. -->
+      <template id="property-template">
+        <article class="card">
+          <a class="card-image" href="details.html">
+            <img alt="Интерьер" loading="lazy">
+            <span class="badge">
+            </span>
+          </a>
+          <button class="favorite" type="button" aria-label="Добавить в избранное">
+            ♡
+          </button>
+          <div class="card-body">
+            <div class="price">
+            </div>
+            <h3>
+              <a class="property-title" href="details.html">
+              </a>
+            </h3>
+            <div class="address">
+            </div>
+            <div class="facts">
+              <span class="rooms">
+              </span>
+              <span class="area">
+              </span>
+              <span class="floor">
+              </span>
+            </div>
+          </div>
+        </article>
+      </template>
+    </main>
+    <!-- Футер одинаков на всех страницах. -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <a class="brand" href="index.html">
+              shanyraq
+              <small>
+                .kz
+              </small>
+            </a>
+            <p class="muted">
+              Ваш следующий адрес начинается здесь.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">
+              О проекте
+            </a>
+            <a href="contact.html">
+              Контакты
+            </a>
+            <a href="privacy.html">
+              Конфиденциальность
+            </a>
+            <a href="terms.html">
+              Условия
+            </a>
+          </div>
+        </div>
+        <div class="footer-note">
+          <span>
+            © Shanyraq.kz · Учебный проект
+          </span>
+          <span>
+            Алматы · Астана · Шымкент · Демонстрационные объявления
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

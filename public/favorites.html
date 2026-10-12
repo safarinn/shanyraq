@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shanyraq.kz — учебный портал продажи и аренды недвижимости Казахстана.">
+    <title>
+      Избранное — Shanyraq.kz
+    </title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer>
+    </script>
+    <script src="js/favorites.js" defer>
+    </script>
+  </head>
+  <body data-page="favorites">
+    <!-- Общее меню: JavaScript только меняет видимость входа, профиля и админки. -->
+    <header id="header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            ⌂
+          </span>
+          <span>
+            shanyraq
+            <small>
+              .kz
+            </small>
+          </span>
+        </a>
+        <button id="menu-button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">
+          ☰
+        </button>
+        <nav id="navigation" aria-label="Главная навигация">
+          <a href="index.html">
+            Главная
+          </a>
+          <a href="catalog.html">
+            Объявления
+          </a>
+          <a href="about.html">
+            О проекте
+          </a>
+          <a href="favorites.html" aria-current="page">
+            Избранное
+          </a>
+          <a id="admin-link" href="admin.html" hidden>
+            Админ
+          </a>
+          <a id="profile-link" href="profile.html" hidden>
+            Профиль
+          </a>
+          <a id="login-link" class="btn secondary small" href="login.html">
+            Войти
+          </a>
+          <button id="logout-button" class="btn secondary small" hidden>
+            Выйти
+          </button>
+          <a id="publish-link" class="btn small" href="contact.html">
+            + Разместить
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container page">
+        <span class="eyebrow">
+          Ваш список
+        </span>
+        <h1 class="page-title">
+          Избранное
+        </h1>
+        <p class="muted">
+          Объекты, к которым хочется вернуться.
+        </p>
+        <div class="property-list" id="favorites-list">
+          <div class="empty">
+            <h3>
+              Пока ничего не найдено
+            </h3>
+            <p class="muted">
+              Попробуйте изменить фильтры или добавьте объявление в избранное.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Шаблон одной карточки. common.js копирует его для каждого объекта из базы. -->
+      <template id="property-template">
+        <article class="card">
+          <a class="card-image" href="details.html">
+            <img alt="Интерьер" loading="lazy">
+            <span class="badge">
+            </span>
+          </a>
+          <button class="favorite" type="button" aria-label="Добавить в избранное">
+            ♡
+          </button>
+          <div class="card-body">
+            <div class="price">
+            </div>
+            <h3>
+              <a class="property-title" href="details.html">
+              </a>
+            </h3>
+            <div class="address">
+            </div>
+            <div class="facts">
+              <span class="rooms">
+              </span>
+              <span class="area">
+              </span>
+              <span class="floor">
+              </span>
+            </div>
+          </div>
+        </article>
+      </template>
+    </main>
+    <!-- Футер одинаков на всех страницах. -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <a class="brand" href="index.html">
+              shanyraq
+              <small>
+                .kz
+              </small>
+            </a>
+            <p class="muted">
+              Ваш следующий адрес начинается здесь.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">
+              О проекте
+            </a>
+            <a href="contact.html">
+              Контакты
+            </a>
+            <a href="privacy.html">
+              Конфиденциальность
+            </a>
+            <a href="terms.html">
+              Условия
+            </a>
+          </div>
+        </div>
+        <div class="footer-note">
+          <span>
+            © Shanyraq.kz · Учебный проект
+          </span>
+          <span>
+            Алматы · Астана · Шымкент · Демонстрационные объявления
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

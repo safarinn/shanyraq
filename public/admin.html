@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shanyraq.kz — учебный портал продажи и аренды недвижимости Казахстана.">
+    <title>
+      Панель администратора — Shanyraq.kz
+    </title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer>
+    </script>
+    <script src="js/admin.js" defer>
+    </script>
+  </head>
+  <body data-page="admin">
+    <!-- Общее меню: JavaScript только меняет видимость входа, профиля и админки. -->
+    <header id="header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            ⌂
+          </span>
+          <span>
+            shanyraq
+            <small>
+              .kz
+            </small>
+          </span>
+        </a>
+        <button id="menu-button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">
+          ☰
+        </button>
+        <nav id="navigation" aria-label="Главная навигация">
+          <a href="index.html">
+            Главная
+          </a>
+          <a href="catalog.html">
+            Объявления
+          </a>
+          <a href="about.html">
+            О проекте
+          </a>
+          <a href="favorites.html">
+            Избранное
+          </a>
+          <a id="admin-link" href="admin.html" hidden aria-current="page">
+            Админ
+          </a>
+          <a id="profile-link" href="profile.html" hidden>
+            Профиль
+          </a>
+          <a id="login-link" class="btn secondary small" href="login.html">
+            Войти
+          </a>
+          <button id="logout-button" class="btn secondary small" hidden>
+            Выйти
+          </button>
+          <a id="publish-link" class="btn small" href="contact.html">
+            + Разместить
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container page" id="admin-content" hidden>
+        <span class="eyebrow">
+          Управление сервисом
+        </span>
+        <h1 class="page-title">
+          Панель администратора
+        </h1>
+        <div class="admin-tabs">
+          <a class="btn secondary small" href="#properties">
+            Объявления
+          </a>
+          <a class="btn secondary small" href="#bookings">
+            Заявки
+          </a>
+          <a class="btn secondary small" href="#users">
+            Пользователи
+          </a>
+          <button class="btn small" id="add-property">
+            + Добавить объявление
+          </button>
+        </div>
+        <section id="properties" class="panel">
+          <h2 style="font-size:24px">
+            Объявления
+          </h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Объект
+                  </th>
+                  <th>
+                    Город / сделка
+                  </th>
+                  <th>
+                    Цена
+                  </th>
+                  <th>
+                    Действия
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="bookings" class="panel">
+          <h2 style="font-size:24px">
+            Заявки на просмотр
+          </h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    № / объект
+                  </th>
+                  <th>
+                    Email
+                  </th>
+                  <th>
+                    Просмотр / телефон
+                  </th>
+                  <th>
+                    Статус
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="users" class="panel">
+          <h2 style="font-size:24px">
+            Пользователи
+          </h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Имя
+                  </th>
+                  <th>
+                    Email
+                  </th>
+                  <th>
+                    Телефон
+                  </th>
+                  <th>
+                    Роль
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+      <dialog id="editor">
+        <div class="dialog-head">
+          <h2 style="font-size:24px">
+            Добавить объявление
+          </h2>
+          <button class="btn secondary small" id="close-editor" aria-label="Закрыть">
+            ✕
+          </button>
+        </div>
+        <form id="property-form">
+          <input type="hidden" name="id" value="">
+          <div class="field">
+            <label for="title">
+              Название *
+            </label>
+            <input id="title" name="title" type="text" value="" required maxlength="160">
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="city">
+                Город *
+              </label>
+              <select name="city" id="city" required>
+                <option value="Алматы" >
+                  Алматы
+                </option>
+                <option value="Астана" >
+                  Астана
+                </option>
+                <option value="Шымкент" >
+                  Шымкент
+                </option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="deal">
+                Тип сделки *
+              </label>
+              <select name="deal" id="deal" required>
+                <option value="sale" >
+                  Продажа
+                </option>
+                <option value="rent" >
+                  Аренда
+                </option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="type">
+                Тип объекта *
+              </label>
+              <select name="type" id="type" required>
+                <option value="apartment" >
+                  Квартира
+                </option>
+                <option value="house" >
+                  Дом
+                </option>
+                <option value="commercial" >
+                  Коммерческая
+                </option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="price">
+                Цена, ₸ *
+              </label>
+              <input id="price" name="price" type="number" value="" required min="1" max="1000000000000" step="1">
+            </div>
+            <div class="field">
+              <label for="rooms">
+                Комнаты *
+              </label>
+              <input id="rooms" name="rooms" type="number" value="" required min="1" max="50" step="1">
+            </div>
+            <div class="field">
+              <label for="area">
+                Площадь, м² *
+              </label>
+              <input id="area" name="area" type="number" value="" required min="0.1" max="100000" step="0.1">
+            </div>
+            <div class="field">
+              <label for="floor">
+                Этажность *
+              </label>
+              <input id="floor" name="floor" type="text" value="" required maxlength="50">
+            </div>
+            <div class="field">
+              <label for="image">
+                Иллюстрация *
+              </label>
+              <select name="image" id="image" required>
+                <option value="images/home-1.svg" >
+                  Интерьер 1
+                </option>
+                <option value="images/home-2.svg" >
+                  Интерьер 2
+                </option>
+                <option value="images/home-3.svg" >
+                  Интерьер 3
+                </option>
+                <option value="images/home-4.svg" >
+                  Интерьер 4
+                </option>
+                <option value="images/home-5.svg" >
+                  Интерьер 5
+                </option>
+                <option value="images/home-6.svg" >
+                  Интерьер 6
+                </option>
+                <option value="images/home-7.svg" >
+                  Интерьер 7
+                </option>
+                <option value="images/home-8.svg" >
+                  Интерьер 8
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="address">
+              Адрес *
+            </label>
+            <input id="address" name="address" type="text" value="" required maxlength="250">
+          </div>
+          <div class="field">
+            <label for="description">
+              Описание *
+            </label>
+            <textarea id="description" name="description" required maxlength="4000">
+            </textarea>
+          </div>
+          <p class="message">
+          </p>
+          <button class="btn" type="submit">
+            Сохранить объявление
+          </button>
+        </form>
+      </dialog>
+    </main>
+    <!-- Футер одинаков на всех страницах. -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <a class="brand" href="index.html">
+              shanyraq
+              <small>
+                .kz
+              </small>
+            </a>
+            <p class="muted">
+              Ваш следующий адрес начинается здесь.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">
+              О проекте
+            </a>
+            <a href="contact.html">
+              Контакты
+            </a>
+            <a href="privacy.html">
+              Конфиденциальность
+            </a>
+            <a href="terms.html">
+              Условия
+            </a>
+          </div>
+        </div>
+        <div class="footer-note">
+          <span>
+            © Shanyraq.kz · Учебный проект
+          </span>
+          <span>
+            Алматы · Астана · Шымкент · Демонстрационные объявления
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

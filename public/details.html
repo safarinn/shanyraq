@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shanyraq.kz — учебный портал продажи и аренды недвижимости Казахстана.">
+    <title>
+      Объявление — Shanyraq.kz
+    </title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer>
+    </script>
+    <script src="js/details.js" defer>
+    </script>
+  </head>
+  <body data-page="details">
+    <!-- Общее меню: JavaScript только меняет видимость входа, профиля и админки. -->
+    <header id="header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            ⌂
+          </span>
+          <span>
+            shanyraq
+            <small>
+              .kz
+            </small>
+          </span>
+        </a>
+        <button id="menu-button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">
+          ☰
+        </button>
+        <nav id="navigation" aria-label="Главная навигация">
+          <a href="index.html">
+            Главная
+          </a>
+          <a href="catalog.html">
+            Объявления
+          </a>
+          <a href="about.html">
+            О проекте
+          </a>
+          <a href="favorites.html">
+            Избранное
+          </a>
+          <a id="admin-link" href="admin.html" hidden>
+            Админ
+          </a>
+          <a id="profile-link" href="profile.html" hidden>
+            Профиль
+          </a>
+          <a id="login-link" class="btn secondary small" href="login.html">
+            Войти
+          </a>
+          <button id="logout-button" class="btn secondary small" hidden>
+            Выйти
+          </button>
+          <a id="publish-link" class="btn small" href="contact.html">
+            + Разместить
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container page">
+        <div class="breadcrumb">
+          <a href="index.html">
+            Главная
+          </a>
+          /
+          <a href="catalog.html">
+            Объявления
+          </a>
+          /
+        </div>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow" id="deal-label">
+              Продажа · Квартира
+            </span>
+            <h1 id="property-title" class="page-title" style="margin-top:12px">
+              Объявление
+            </h1>
+            <p class="muted" id="property-address">
+            </p>
+          </div>
+          <button class="btn secondary" id="detail-fav">
+            ♡ Сохранить
+          </button>
+        </div>
+        <div class="details-layout">
+          <div>
+            <img class="detail-image" src="images/home-1.svg" alt="Иллюстрация интерьера Объявление">
+            <p class="caption">
+              Иллюстрация объекта. Демонстрационное объявление.
+            </p>
+            <div class="detail-facts">
+              <div>
+                <strong id="property-rooms">
+                </strong>
+                <span>
+                  Планировка
+                </span>
+              </div>
+              <div>
+                <strong id="property-area">
+                </strong>
+                <span>
+                  Общая площадь
+                </span>
+              </div>
+              <div>
+                <strong id="property-floor">
+                </strong>
+                <span>
+                  Этажность
+                </span>
+              </div>
+            </div>
+            <div class="detail-copy">
+              <h2>
+                О недвижимости
+              </h2>
+              <p id="property-description">
+              </p>
+              <h3>
+                Инфраструктура
+              </h3>
+              <ul class="muted">
+                <li>
+                  Магазины и городская инфраструктура рядом
+                </li>
+                <li>
+                  Удобные транспортные маршруты
+                </li>
+                <li>
+                  Планируйте просмотр через личный кабинет
+                </li>
+              </ul>
+            </div>
+          </div>
+          <aside>
+            <div class="panel">
+              <div class="price" id="property-price">
+              </div>
+              <p class="muted" id="price-label">
+              </p>
+              <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+              <h3>
+                Записаться на просмотр
+              </h3>
+              <p class="muted" style="font-size:13px">
+                Выберите удобное время. Заявка появится в вашем личном кабинете.
+              </p>
+              <a id="booking-login" class="btn" href="login.html" hidden>
+                Войти для записи
+              </a>
+              <div id="booking-confirmation" class="success" role="status" hidden>
+              </div>
+              <form id="booking-form">
+                <div class="field">
+                  <label for="visit_date">
+                    Дата *
+                  </label>
+                  <input id="visit_date" name="visit_date" type="date" value="" required >
+                </div>
+                <div class="field">
+                  <label for="visit_time">
+                    Время *
+                  </label>
+                  <select name="visit_time" id="visit_time" required>
+                    <option value="">
+                      Выберите время
+                    </option>
+                    <option>
+                      10:00
+                    </option>
+                    <option>
+                      12:00
+                    </option>
+                    <option>
+                      14:00
+                    </option>
+                    <option>
+                      16:00
+                    </option>
+                    <option>
+                      18:00
+                    </option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="phone">
+                    Телефон *
+                  </label>
+                  <input id="phone" name="phone" type="tel" value="" required pattern="[+0-9 ()-]{10,20}" placeholder="+7 700 123 45 67">
+                </div>
+                <div class="field">
+                  <label for="message">
+                    Комментарий
+                  </label>
+                  <textarea id="message" name="message" maxlength="1000" placeholder="Что хотите уточнить?">
+                  </textarea>
+                </div>
+                <p class="message">
+                </p>
+                <button class="btn" style="width:100%" type="submit">
+                  Отправить заявку ↗
+                </button>
+              </form>
+              <p class="caption">
+                Это учебная заявка, она не отправляется реальному владельцу.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <!-- Футер одинаков на всех страницах. -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <a class="brand" href="index.html">
+              shanyraq
+              <small>
+                .kz
+              </small>
+            </a>
+            <p class="muted">
+              Ваш следующий адрес начинается здесь.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">
+              О проекте
+            </a>
+            <a href="contact.html">
+              Контакты
+            </a>
+            <a href="privacy.html">
+              Конфиденциальность
+            </a>
+            <a href="terms.html">
+              Условия
+            </a>
+          </div>
+        </div>
+        <div class="footer-note">
+          <span>
+            © Shanyraq.kz · Учебный проект
+          </span>
+          <span>
+            Алматы · Астана · Шымкент · Демонстрационные объявления
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shanyraq.kz — учебный портал продажи и аренды недвижимости Казахстана.">
+    <title>
+      Личный кабинет — Shanyraq.kz
+    </title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer>
+    </script>
+    <script src="js/profile.js" defer>
+    </script>
+  </head>
+  <body data-page="profile">
+    <!-- Общее меню: JavaScript только меняет видимость входа, профиля и админки. -->
+    <header id="header">
+      <div class="container header-row">
+        <a class="brand" href="index.html">
+          <span class="brand-symbol" aria-hidden="true">
+            ⌂
+          </span>
+          <span>
+            shanyraq
+            <small>
+              .kz
+            </small>
+          </span>
+        </a>
+        <button id="menu-button" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">
+          ☰
+        </button>
+        <nav id="navigation" aria-label="Главная навигация">
+          <a href="index.html">
+            Главная
+          </a>
+          <a href="catalog.html">
+            Объявления
+          </a>
+          <a href="about.html">
+            О проекте
+          </a>
+          <a href="favorites.html">
+            Избранное
+          </a>
+          <a id="admin-link" href="admin.html" hidden>
+            Админ
+          </a>
+          <a id="profile-link" href="profile.html" hidden aria-current="page">
+            Профиль
+          </a>
+          <a id="login-link" class="btn secondary small" href="login.html">
+            Войти
+          </a>
+          <button id="logout-button" class="btn secondary small" hidden>
+            Выйти
+          </button>
+          <a id="publish-link" class="btn small" href="contact.html">
+            + Разместить
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="container page">
+        <span class="eyebrow">
+          Личный кабинет
+        </span>
+        <h1 class="page-title">
+          Личный кабинет
+        </h1>
+        <div class="profile-layout">
+          <aside>
+            <div class="panel">
+              <div class="avatar" id="user-avatar">
+              </div>
+              <h3 id="user-name">
+              </h3>
+              <p class="muted" id="user-email">
+              </p>
+              <a class="btn secondary small" href="favorites.html">
+                ♡ Избранное (0)
+              </a>
+            </div>
+          </aside>
+          <div>
+            <div class="panel">
+              <h2 style="font-size:24px">
+                Личные данные
+              </h2>
+              <form id="profile-form">
+                <div class="form-row">
+                  <div class="field">
+                    <label for="first_name">
+                      Имя *
+                    </label>
+                    <input id="first_name" name="first_name" type="text" value="" required maxlength="80">
+                  </div>
+                  <div class="field">
+                    <label for="last_name">
+                      Фамилия *
+                    </label>
+                    <input id="last_name" name="last_name" type="text" value="" required maxlength="80">
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="phone">
+                    Телефон
+                  </label>
+                  <input id="phone" name="phone" type="tel" value="" pattern="[+0-9 ()-]{10,20}">
+                </div>
+                <p class="message">
+                </p>
+                <button class="btn" type="submit">
+                  Сохранить изменения
+                </button>
+              </form>
+            </div>
+            <div class="panel">
+              <h2 style="font-size:24px">
+                Мои просмотры
+              </h2>
+              <div id="booking-list">
+              </div>
+              <a href="catalog.html" class="text-link">
+                Перейти в каталог →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Одна заявка: профиль копирует шаблон и заполняет текстовые поля. -->
+      <template id="booking-template">
+        <article class="booking">
+          <div>
+            <h3>
+              <a class="booking-title">
+              </a>
+            </h3>
+            <p class="booking-date muted">
+            </p>
+            <p class="booking-message caption">
+            </p>
+          </div>
+          <div>
+            <span class="pill">
+            </span>
+            <button class="btn secondary small cancel-button">
+              Отменить
+            </button>
+          </div>
+        </article>
+      </template>
+    </main>
+    <!-- Футер одинаков на всех страницах. -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <a class="brand" href="index.html">
+              shanyraq
+              <small>
+                .kz
+              </small>
+            </a>
+            <p class="muted">
+              Ваш следующий адрес начинается здесь.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">
+              О проекте
+            </a>
+            <a href="contact.html">
+              Контакты
+            </a>
+            <a href="privacy.html">
+              Конфиденциальность
+            </a>
+            <a href="terms.html">
+              Условия
+            </a>
+          </div>
+        </div>
+        <div class="footer-note">
+          <span>
+            © Shanyraq.kz · Учебный проект
+          </span>
+          <span>
+            Алматы · Астана · Шымкент · Демонстрационные объявления
+          </span>
+        </div>
+      </div>
+    </footer>
+    <div id="toast" class="toast" role="status" hidden>
+    </div>
+  </body>
+</html>
